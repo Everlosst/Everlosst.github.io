@@ -53,23 +53,21 @@ var familiesArray = [
 ];
 
 //Dropdown Gens
-function checkStatus(status, checker) {
-	  return checker.indexOf (status) != -1;
-	}
+
 	
 //Family Choice Gen
-function familyDDGen(status, dropdown, array, textType){
+
+
+function familyDDGen(state, dropdown, array, textType){
+  console.log("Click triggered")
 	for (i = 0; i < array.length; i++) {
-		var checker = array[i];
-		if (checkStatus(status, checker)) {
-			var x = document.getElementById(dropdown);
+      if (array[i].status== state) {
 			var option = document.createElement ("option");
+			document.getElementById(dropdown).add(option)
 			option.text = array[i].textType;
-			x.add(option);}
-		}}
-	
-		// DD activators
-		
+		   console.log("If function")
+		}}}
+
 		
 		
 		
