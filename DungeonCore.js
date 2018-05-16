@@ -52,24 +52,18 @@ var familiesArray = [
   {status: "unavailable", level: 0, class: "family", species: "Slime"}
 ];
 
-//Dropdown Gens
-
-	
 //Family Choice Gen
-
-
-function familyDDGen(state, dropdown, array, textType){
-  console.log("Click triggered")
-	for (i = 0; i < array.length; i++) {
-      if (array[i].status== state) {
+function familyDDGen(state, dropdown){
+   document.getElementById(dropdown).options.length = 0;
+	for (i = 0; i < familiesArray.length; i++) {
+      if (familiesArray[i].status== state) {
 			var option = document.createElement ("option");
 			document.getElementById(dropdown).add(option)
-			option.text = array[i].textType;
-		   console.log("If function")
+			option.text = familiesArray[i].species;
 		}}}
-
-		
-		
+/*
+function familySelect (){
+*/
 		
 		
 		
