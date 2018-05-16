@@ -83,3 +83,14 @@ body {
   font-size: 16px;
   border-radius: 5px;
 }
+
+/* Button Styling */
+button {
+  background-color: black;
+	border: 1px solid white;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	border-radius: 5px;
+	}

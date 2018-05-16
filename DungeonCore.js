@@ -1,6 +1,7 @@
+/* "use strict"; */
  // Initialization
  window.onload = function () {
-   startTab();}
+   startTab();};
 function startTab() {
   document.getElementById("defaultOpen").click(); // Initial nav bar click
   setInterval(gameTimer, 1000); // Game Timer 
@@ -42,19 +43,49 @@ function passiveMana() {
   mana += passiveManaRate;
   }
 
-/*
+
 //Families
 var familiesArray = [
-  {status: "available", level: 0, class: "family", species: "insect"};
-  {status: "available", level: 0, class: "family", species: "mammal"};
-  {status: "unavailable", level: 0, class: "family", species: "goblin"};
-  {status: "unavailable", level: 0, class: "family", species: "slime"};
-]
+  {status: "available", level: 0, class: "family", species: "Insect"},
+  {status: "available", level: 0, class: "family", species: "Mammal"},
+  {status: "unavailable", level: 0, class: "family", species: "Goblin"},
+  {status: "unavailable", level: 0, class: "family", species: "Slime"}
+];
+
+//Dropdown Gens
+function checkStatus(status, checker) {
+	  return checker.indexOf (status) != -1;
+	}
+	
+//Family Choice Gen
+function familyDDGen(status, dropdown, array, textType){
+	for (i = 0; i < array.length; i++) {
+		var checker = array[i];
+		if (checkStatus(status, checker)) {
+			var x = document.getElementById(dropdown);
+			var option = document.createElement ("option");
+			option.text = array[i].textType;
+			x.add(option);}
+		}}
+	
+		// DD activators
+		
+		
+		
+		
+		
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
 
 
-document.getElementById("defaultOpen").addEventListener("click", function familyAvailableCheck(){
-  for (var i=0, i < familiesArray.length; i++) {
-    addOption(document.familyChoiceDD, familiesArray.[i].species, familiesArray.[i].species);
-  }
-});
-*/
+
+
+

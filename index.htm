@@ -56,7 +56,7 @@
       </li>
       <li>
         <button class="tablinks" onclick="openScreen(event, 'creatureLab')" id="defaultOpen">
-          <strike>Creature Lab</strike>
+          Creature Lab
         </button>
       </li>
       <li>
@@ -93,33 +93,45 @@
   </div>  
   
   <div class="item4"><!-- Main window, divided by nav tabs -->
-    <div id="dungeonLO" class="tabcontent">
+    <div id="dungeonLO" class="tabcontent"><!-- Dungeon Layout screen -->
       <h3>Dungeon Layout</h3>
     </div>
-    <div id="encounters" class="tabcontent">
+    <div id="encounters" class="tabcontent"><!-- Encounters Screen -->
       <h3>Encounters</h3>
     </div>
-    <div id="creatureLab" class="tabcontent">
-      <select id="familyChoiceDD" class="dropdown">
-        <option value="whatever">Text</option>
-      </select> 
+    <div id="creatureLab" class="tabcontent"><!-- Creature Lab Screen -->
+      <table id= "familySelectTable"><!-- Family select Table -->
+        <tr>
+          <td>
+            <select id="familyChoiceDD" class="dropdown" onclick="familyDDGen('available', 'familyChoiceDD', familiesArray, species)">
+              <option></option>
+            </select> 
+          </td>
+          <td colspan="4"><span class= "familyFlavorText"></span></td>
+        </tr>
+        <tr>
+          <td colspan="5">
+            <button id="familySelectButton">Select</button>
+          </td>
+        </tr>
+      </table>
     </div>
-    <div id="creatureMan" class="tabcontent">
+    <div id="creatureMan" class="tabcontent"><!-- Creature Management Screen -->
       <h3>Creature Management</h3>
     </div>
-    <div id="loot" class="tabcontent">
+    <div id="loot" class="tabcontent"><!-- Loot Screen -->
       <h3>Loot</h3>
     </div>
-    <div id="dungeonUpg" class="tabcontent">
+    <div id="dungeonUpg" class="tabcontent"><!-- Dungeon Upgrade Screen -->
       <h3>Dungeon Upgrade</h3>
     </div>
-    <div id="advent" class="tabcontent">
+    <div id="advent" class="tabcontent"><!-- Adventurers Screen -->
       <h3>Adventurers</h3>
     </div>
-    <div id="town" class="tabcontent">
+    <div id="town" class="tabcontent"><!-- Town Screen -->
       <h3>Town</h3>
     </div>
-    <div id="corruption" class="tabcontent">
+    <div id="corruption" class="tabcontent"><!-- Corruption Screen -->
       <h3>Corruption</h3>
     </div>
   </div>
