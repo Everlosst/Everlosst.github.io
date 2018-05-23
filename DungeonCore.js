@@ -44,29 +44,40 @@ function passiveMana() {
   }
 
 
-//Families
-var familiesArray = [
-  {status: "available", level: 0, class: "family", species: "Insect"},
-  {status: "available", level: 0, class: "family", species: "Mammal"},
-  {status: "unavailable", level: 0, class: "family", species: "Goblin"},
-  {status: "unavailable", level: 0, class: "family", species: "Slime"}
-];
+//Families and base monster tree
+var data = {
+  familiesArray: [
+    {status: "available", level: 0, class: "family", species: "Insect"},
+    {status: "available", level: 0, class: "family", species: "Mammal"},
+    {status: "unavailable", level: 0, class: "family", species: "Goblin"},
+    {status: "unavailable", level: 0, class: "family", species: "Slime"},
+  ]
+};
 
-//Family Choice Gen
-function familyDDGen(state, dropdown){
-   document.getElementById(dropdown).options.length = 0;
-	for (i = 0; i < familiesArray.length; i++) {
-      if (familiesArray[i].status== state) {
+//Dropdown population
+var dropdown = document.querySelectorAll('.dropdown');
+document.addEventListener("DOMContentLoaded", function() {
+  for(x=0; x<dropdown.length; x++) {
+    populateDropDown(
+      dropdown[x].dataset.state,        // Get state from data attr
+      dropdown[x],                      // Pass the dropdown DOM element
+      data[dropdown[x].dataset.array],  // Reference local data object above using variable
+      dropdown[x].dataset.type          // Get type from data attr
+    );
+    console.log("Dropdown loop")
+  }
+});
+
+function populateDropDown(state, dropdown, array, textType) {
+	for (i = 0; i < array.length; i++) {
+    if (array[i].status== state) {
 			var option = document.createElement ("option");
-			document.getElementById(dropdown).add(option)
-			option.text = familiesArray[i].species;
-		}}}
-/*
-function familySelect (){
-*/
-		
-		
-		
+			document.getElementById(dropdown.id).add(option);
+			option.text = array[i][textType];
+		}
+  }
+}
+
 			
 			
 			
